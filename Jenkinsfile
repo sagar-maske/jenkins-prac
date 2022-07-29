@@ -15,7 +15,7 @@ steps{
 stage ('copy-dev.html'){
 
 steps{
-	sh 'cp -r dev.html /var/www/html/'
+	sh'cp -r dev.html /var/www/html/'
 	}
 
 }
@@ -27,4 +27,14 @@ steps{
 	}
 
 }
+
+stage('service-restart'){
+
+steps {
+sh 'service httpd restart'
+}
+}
+}
+}
+
 
